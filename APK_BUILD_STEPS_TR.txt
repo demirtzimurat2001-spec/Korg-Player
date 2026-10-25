@@ -1,0 +1,13 @@
+KORG PLAYER — APK OLUŞTURMA ADIMLARI
+
+Bu paket kaynak koddur; APK dosyası değildir.
+
+1. ZIP'i açın.
+2. İçindeki KorgPlayerPrototype klasörünün içeriğini bir GitHub deposunun köküne yükleyin (app, .github, build.gradle, settings.gradle vb. aynı kökte olmalı).
+3. GitHub deposunda Actions sekmesini açın.
+4. “Build Korg Player APK” iş akışını seçin.
+5. “Run workflow” düğmesine basın.
+6. İşlem başarıyla tamamlanınca ilgili çalışmayı açın ve Artifacts bölümündeki “KorgPlayer-debug-apk” dosyasını indirin.
+7. İndirilen APK'yı Android telefonda açıp kurun. Android, bilinmeyen kaynaktan yüklemeye izin istemesi hâlinde yalnızca kendi indirdiğiniz dosya için izin verin.
+
+UYARI: Bu APK, SET arşiv analizi ve MIDI test notası prototipidir. Orijinal Korg Style'larını henüz çalmaz. Gerçek cihazda MIDI testinin başarılı olması telefon, OTG adaptörü, kablo ve klavye ayarlarına bağlıdır.

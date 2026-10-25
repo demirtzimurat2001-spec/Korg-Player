@@ -1,0 +1,30 @@
+KORG PLAYER — SOURCE ARCHIVE ANALYSIS
+
+Input archive: STYLE player.zip
+Observed entries: 333 .stg files and 14 .json files.
+No separate files with .pcm, .pcg, or .sound extensions were present in this archive.
+
+Example STG prefix (interpreted as ASCII where printable):
+Root ... Branch Main.ssn ... Branch SongStyle1.scn ... Branch <style>.stc ...
+Branch Intro2.scn ... Branch Bass.pdc ... Leaf Main.mid ... MThd ... MTrk ...
+
+What this tells us:
+- STG files appear to be structured containers with named branches/leaves.
+- At least some STG containers embed a Standard MIDI file named Main.mid.
+- The container also references Korg-specific resources such as .ssn, .scn, .stc and .pdc.
+- Those names alone are not enough to reconstruct the complete Pa5X Style engine.
+
+Critical missing data:
+- This uploaded archive is a STYLE collection, not a complete SET with separate PCM/SOUND resources.
+- No PCM sample payloads or full SOUND definitions were found as standalone files in this ZIP.
+- Therefore original sound reproduction cannot be completed from this archive alone.
+
+Next required engineering work:
+1. Obtain a complete, legally created/exported Pa5X SET that includes SOUND and PCM data (if used by the selected styles).
+2. Map the container node/length encoding and validate all leaf boundaries.
+3. Parse SOUND oscillator/multisample/key-zone and sample-loop data, only where format is understood.
+4. Parse complete Style event/variation/chord tables and timing.
+5. Implement a low-latency audio engine for local sample playback OR send correctly reconstructed MIDI events to the Pa5X, whose own sound engine provides the timbres.
+6. Compare against the keyboard and document unsupported fields. No bit-perfect claim until tested.
+
+This report does not claim full Korg format decoding.

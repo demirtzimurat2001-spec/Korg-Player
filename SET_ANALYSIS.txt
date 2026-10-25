@@ -1,0 +1,41 @@
+KORG PLAYER — YÜKLENEN SET ARŞİVİ ANALİZİ
+
+Arşiv: PA1X NEW 2026.SET.zip
+Dosya girdisi: 145
+Arşivden açılan toplam veri: 17,965,316 bayt
+
+UZANTI SAYIMI:
+  .gbl: 1
+  .kmp: 1
+  .pad: 10
+  .pcg: 3
+  .pcm: 99
+  .prf: 20
+  .sbd: 6
+  .sbl: 1
+  .sty: 3
+  .voc: 1
+
+STYLE BANKALARI (STY):
+  PA1X NEW 2026.SET/STYLE/USER01.STY (179,100 bayt)
+    Metin olarak çıkarılabilen örnek adlar: Mr. Shain 2026 C, Ravsh Krasniqi, Dm Rec.2023, G#m FAMILIE, G#m KONAQEQ, DefQIFT Am Shain, Mali Germany AM, Gm Shain JAPANI, Gjezz LIVE Gm, Enne Enne Dm, Shisha Dm 2026, RAVSH BABO Cm KI, TUFA TUFA Cm, Butrint-KUKU +1, GJEZZ LIVE Cm, DEF LIVE 2026, Strings Show Em, G*m DEF LIVE NON
+  PA1X NEW 2026.SET/STYLE/USER02.STY (223,943 bayt)
+    Metin olarak çıkarılabilen örnek adlar: New Style, IMMER NOCH, SHAIN POWER Dm, Gm SHAIN\VISAR, Em KONSTANTINE, VEDAT DEF C#M, Fm Shain KING, XXL SOUND Dm, Shain TALLAVA Fm, Dm CH-MAK, Marrakesh Em SER, GREEK Dm ADY, LEYLI FM BALADE, YOUTUBE SHAIN G*, AM TURBO XXL, Ady URBAN Am, AMG TALLAVA Dm, DAMLA DAMLA Gm
+  PA1X NEW 2026.SET/STYLE/USER03.STY (278,912 bayt)
+    Metin olarak çıkarılabilen örnek adlar: ALEGGRO-100, GAJDE VEDO NEU, MOJ GEMILE>2013, ADNAN>FERDI:2019, MILIONER 2019, ARAPSKI ADNAN, COCEK ADNAN, S H A H I R Q E, DARSMAMADHE FUUL, WI-FI ORA Am, PREJ NJI SHPATIT, ADNAN.TALLAVA, PARO ORO LIVE, PARO ORO, 100 kinta POWER, ADNAN VALLE NEU, ADNAN VALLE, DESTAN BEGU
+
+SOUND BANKALARI (PCG):
+  PA1X NEW 2026.SET/SOUND/USER01.PCG (51,263 bayt)
+    Metin olarak çıkarılabilen örnek adlar: GJUMBUSH, SAX SHAIN KING, FLUTE 2021, VIOLIN STRINGS, SURLA SHAIN, SAZ SHAIN, KLARINET, VIO MOSS NEU, SAX MOSS TRC, GITARA Wah, SURLA LIVE, VEDAT, SHAIN XXL, CIFEIKA, TRITON KLARINETE, TIFI>>VIOLA, HASRET, OUD EL
+  PA1X NEW 2026.SET/SOUND/USER02.PCG (42,001 bayt)
+    Metin olarak çıkarılabilen örnek adlar: ArabStrings, OCT SA, S OCY 1, KlArInEt, SURLA *~Hasan~*, ELEKTRO, .Guitar, Viola Muzo, ORFEI, RoMsKi/GuItArE, Disa Tango!, ROLAND D-50, SH 2000 VIO, E.SAS, SERVIA 2, Keman, Bouzouki, KORG SIGMA
+  PA1X NEW 2026.SET/SOUND/USERDK.PCG (133,860 bayt)
+    Metin olarak çıkarılabilen örnek adlar: NEW SET, 2026 DRUMS, NEW SERO, BASS TR NEW, SHAIN JAPAN, -{-KORG-}-, TEIL 2, TUPANI\PA3x, NEW Emrah oki, %%GIO-ShEqET%%, DRUMS EmRaH BASS, House\Oriental, TEIL66/VEDO, TEIL66/VEDO2, 2o14EmRaH.new, DRUMS JAPI, NEWDRUMS, New Sample 2014
+
+ÖNEMLİ TEKNİK NOTLAR:
+• SET yapısı Pa1X/klasik Pa serisi tipinde görünüyor: STY bankaları, PCG ses bankaları, PCM örnekleri, KMP multisample, PRF performanslar ve PAD dosyaları içeriyor.
+• STY dosyaları KORF imzası ve okunabilir Style adları içeriyor. Bu, dosyanın tüm olay/kanal/chord-variation yapısının çözüldüğü anlamına gelmez.
+• PCM örneklerini ses olarak çalmak için sample biçimi, bit derinliği/örnekleme oranı ve PCG/KMP içindeki örnek eşlemeleri doğru çözülmelidir.
+• Bu rapor uzantı ve okunabilir metin analizi yapar; özel Korg ikili biçimlerini bütünüyle çözmez.
+• Bu SET, Pa5X KST/STG biçimiyle aynı kabul edilemez. Pa1X SET desteği ile Pa5X emülasyonu ayrı işlerdir.
+• Android uygulama prototipi SET arşivini tarar ve Android MIDI API ile test notası göndermeyi deneyebilir. Orijinal Korg Style çalma motoru tamamlanmış değildir.

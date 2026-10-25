@@ -1,0 +1,7 @@
+Kotlin compiler test result (Oc31Decoder.kt compiled and executed against PA1X NEW 2026.SET.zip):
+STYLE/USER01.STY: 64 blocks decoded, 339204 bytes uncompressed
+STYLE/USER02.STY: 63 blocks decoded, 427719 bytes uncompressed
+STYLE/USER03.STY: 63 blocks decoded, 544320 bytes uncompressed
+TOTAL: 190 blocks decoded, 1,311,243 bytes uncompressed
+
+This validates the OC31 block decoder against these files. It does not validate semantic decoding of style events or PCM/KMP sample mapping.

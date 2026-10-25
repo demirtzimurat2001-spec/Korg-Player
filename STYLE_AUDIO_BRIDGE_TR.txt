@@ -1,0 +1,26 @@
+KORG PLAYER — SES MOTORU BAĞLANTISI (25.10.2026)
+
+Bağlanan parçalar:
+- MainActivity ritim adımları artık SampleVoiceEngine.noteOn/noteOff çağrılarını yapıyor.
+- Uygulama USB-MIDI cihazı bağlı olmadan da dahili sentezlenmiş davul ve bas ritmi çalabiliyor.
+- MIDI cihazı bağlıysa aynı GM davul ve bas notaları harici klavyeye de gönderiliyor.
+- Variation, Fill, Break ve Ending modları mevcut ritim adım motoruna bağlı.
+- SampleVoiceEngine içine temel sentetik GM davul sesleri (kick, snare, hi-hat, tom, crash) ve bas sesi eklendi.
+
+ÖNEMLİ SINIR:
+Bu sesler gönderilen SET'in orijinal PCM örnekleri değildir. SET içindeki PCM/RAM, KMP ve PCG dosyaları Korg'un özel yapısında; şu an bu dosyalardan doğru örnek dalga biçimleri, multisample key-zone eşlemesi ve Style içindeki gerçek nota olayları bütünüyle çözülemiyor. OC31 açılımı tek başına ritim olaylarını çözmez. Bu yüzden bu sürüm gerçek ses motoruna giden bağlantıyı ve dahili sesli ritim çalışmasını sağlar; Pa1X SET'inin orijinal ritimlerini birebir çaldığını iddia etmez.
+
+Derleme durumu:
+Bu ortamda Android SDK/Gradle bulunmadığı için APK derlenip cihazda doğrulanamadı. Kaynak değişiklikleri ZIP içine dahil edildi.
+
+GÜNCELLEME — DAHİLİ SES / OYNATMA
+- Bas artık 16 adımlı döngüde her dörtlükte tetiklenir; C kök ve G beşli demo notaları dönüşümlü kullanılır.
+- Bas velocity'si Fill bölümünde yükseltilir.
+- Stop sırasında MIDI kanallarına All Notes Off ve Reset All Sounds mesajları gönderilir.
+- Bu eşlik, SET içindeki akor algılama ya da orijinal STY bas partisyonu değildir; sentez motorunun ve zamanlamanın çalışmasını denemek için üretilmiştir.
+
+## Follow-up implementation: playable STG selection and melodic fallback (25 Oct 2026)
+- Added a UI action to choose among up to 120 STG files whose embedded MIDI can actually be parsed, instead of silently forcing the first archive entry. Selection updates the active container/sequence used by Variation playback and named-scene extraction.
+- Internal audio now tracks MIDI program-change messages per channel. For melodic STG notes where no decoded Korg sample zone is available, the engine synthesizes a simple program-dependent fallback voice; percussion channel 10 continues to prefer the dedicated built-in drum voices. This makes more parsed notes audible in the phone mixer, but it is not a Korg sound-bank emulator and is not original SET PCM.
+- Parser regression check on the supplied STG sample still reports: Intro2 156 note-ons, Var1 577, Var2 1,640, Var3 184, Var4 299, Break 42. Missing Fill/Ending branches remain missing in that file; the app must not claim otherwise.
+- Android build and device audio output remain unverified in this environment because Android SDK/Gradle are unavailable. No APK is claimed.

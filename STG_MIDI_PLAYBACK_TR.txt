@@ -1,0 +1,19 @@
+# STG MIDI playback investigation and test (25 Oct 2026)
+
+The supplied modern `.stg` files contain multiple embedded Standard MIDI files. The binary container uses NUL-separated tree names (for example `Branch\0Var1.scn`, `Branch\0Bass.pdc`, `Leaf\0Main.mid`), so searching for a plain-text scene name does not work.
+
+`EmbeddedMidiParser.extractAndParse()` now:
+- locates the Var1 scene marker using the actual NUL-separated encoding;
+- scans the Var1 scene's Bass, Drum, Perc and Acc1..Acc5 MIDI leaves;
+- parses the embedded SMF chunks and merges compatible PPQ event streams by tick;
+- falls back to the most note-rich valid embedded SMF if no Var1 scene is found;
+- playback loop scheduling rounds the end of the last event up to a 4/4 bar boundary, avoiding an abrupt too-early restart for shorter clips.
+
+Standalone Kotlin parser test compiled and ran against real files in the provided `STYLE player.zip`:
+- `STYLE/Ballade/ERC%5CIboShow Bm.stg`: 3,435 merged events, 577 note-on events, PPQ 384.
+- `STYLE/Ballade/Muharem Ahmeti.stg`: 653 events, 60 note-on events, PPQ 384.
+- `STYLE/Vr Vullnet/003 .Tarabuk 145.stg`: 3,999 events, 1,432 note-on events, PPQ 384.
+
+These are parser tests on real files, not a test of Android audio output. The current player chooses the Var1 scene when it exists; scene selection for Intro/Fill/Ending and chord-aware transposition still needs implementation. Old `.STY` Pa1X files in the other supplied SET are a different format and are not decoded into playback by this parser. Original Korg PCM/KMP sample mapping remains unsolved; internal sounds are synthesized diagnostics, while USB-MIDI receives the parsed MIDI events.
+
+Scene-aware extraction was added after the initial test: the app now can extract a named scene (`Intro2`, `Var1`–`Var4`, `Break`, etc.) and the mode control requests `Var1`, `Fill1`, `Break`, or `Ending1`. If the requested Fill/Ending scene is absent in the selected STG, the app falls back to the built-in generated pattern rather than pretending it found original events. Sample file scene test: Intro2 156 note-ons, Var1 577, Var2 1,640, Var3 184, Var4 299, Break 42; this file has no `Fill1` or `Ending1` branch.

@@ -1,0 +1,24 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#171923">
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="KORG PLAYER" android:textColor="#FFFFFF" android:textSize="28sp" android:textStyle="bold" />
+  <TextView android:id="@+id/status" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Pa5X SET / STYLE analiz prototipi" android:textColor="#BEC4D7" android:paddingTop="8dp" android:paddingBottom="16dp" />
+  <Button android:id="@+id/openZip" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="SET / ZIP DOSYASI SEÇ VE ANALİZ ET" />
+  <Button android:id="@+id/selectStyle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="ÇALINACAK STG RİTMİNİ SEÇ" />
+  <TextView android:id="@+id/fileInfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Henüz dosya seçilmedi" android:textColor="#FFFFFF" android:padding="12dp" />
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="STYLE LİSTESİ" android:textColor="#8B9DFF" android:textStyle="bold" android:paddingTop="12dp" />
+  <TextView android:id="@+id/stylesList" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="ZIP seçerek .sty veya .stg dosyalarını tara" android:textColor="#FFFFFF" android:padding="12dp" android:textIsSelectable="true" />
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="SET / MIDI ANALİZİ" android:textColor="#8B9DFF" android:textStyle="bold" android:paddingTop="12dp" />
+  <TextView android:id="@+id/midiInfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="MIDI bağlantı durumu kontrol ediliyor…" android:textColor="#BEC4D7" android:padding="12dp" />
+  <Button android:id="@+id/refreshMidi" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="MIDI CİHAZLARINI YENİLE" />
+  <Button android:id="@+id/testMidi" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="MIDI TEST NOTASI GÖNDER (C4)" />
+  <Button android:id="@+id/testSound" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="DAHİLİ SES MOTORUNU TEST ET" />
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="STYLE KONTROLLERİ" android:textColor="#8B9DFF" android:textStyle="bold" android:paddingTop="16dp" />
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+   <Button android:id="@+id/startStop" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="RİTMİ BAŞLAT" />
+   <Button android:id="@+id/tempo" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="TEMPO: 120" />
+  </LinearLayout>
+  <Button android:id="@+id/pattern" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="BÖLÜM: VARIATION" />
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="MIDI ritim motoru: Variation / Fill / Break / Ending. Klavyenin USB-MIDI girişine GM davul ve bas notaları gönderir." android:textColor="#BEC4D7" android:padding="12dp" />
+  <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ses motoru örnek PCM bölgelerini çalacak şekilde hazırlandı; SET içindeki Korg PCM/KMP örnek eşlemesi ve STY olaylarının tam çözümü henüz tamamlanmadı. Bu nedenle orijinal SET ritimleri henüz birebir çalmaz." android:textColor="#FFCC80" android:paddingTop="16dp" />
+ </LinearLayout>
+</ScrollView>
